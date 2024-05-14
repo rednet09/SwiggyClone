@@ -1,0 +1,8 @@
+# Ignore Parcel cache
+parcel-cache/
+
+# Ignore output build directory
+dist/
+
+# Ignore Node.js modules
+node_modules/
