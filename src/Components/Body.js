@@ -33,9 +33,10 @@ const Body = () => {
   if (filteredResturant === null) return <ShimmerUi />;
 
   return (
-    <main className="body-content">
-      <div className="search-container">
+    <main className="m-10">
+      <div className="flex justify-between my-6">
         <button
+          className="bg-slate-600 rounded-lg p-4 text-white"
           onClick={() => {
             const updateList = resturantList.filter((e) => {
               return e?.info?.avgRating > 4;
@@ -46,10 +47,11 @@ const Body = () => {
         >
           Top Rated Resturants
         </button>
-        <div>
-          <label>
+        <div className="flex gap-2 items-center">
+          <label className="py-2 mx-2">
             Search:
             <input
+              className="border-2 border-black rounded-lg px-4"
               onChange={(e) => setSearchText(e.target.value)}
               type="text"
               name="name"
@@ -57,6 +59,7 @@ const Body = () => {
             />
           </label>
           <button
+            className="bg-slate-600 rounded-lg px-2 text-white"
             onClick={() => {
               const searchList = resturantList.filter((e) => {
                 return e?.info?.name
@@ -73,7 +76,7 @@ const Body = () => {
       {resturantList?.length === 0 ? (
         <ShimmerUi />
       ) : (
-        <div className="res-container">
+        <div className="flex flex-wrap gap-4">
           {filteredResturant.map((resturant) => {
             return (
               <Link

@@ -4,13 +4,13 @@ import useOnlineStatus from "../Utils/useOnlineStatus";
 const Header = () => {
   const status = useOnlineStatus();
   return (
-    <header className="header-container">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL}></img>
+    <header className="flex justify-between p-6 border-2 border-black mt-4 mx-2">
+      <div className="w-24 rounded-sm">
+        <img className="rounded-3xl" src={LOGO_URL}></img>
       </div>
 
-      <nav className="nav-bar">
-        <ul>
+      <nav className="flex justify-between">
+        <ul className="flex justify-between gap-10 items-center">
           <li>Online Status : {status ? "🟢" : "🔴"}</li>
           <li>
             <Link to="/">Home</Link>
