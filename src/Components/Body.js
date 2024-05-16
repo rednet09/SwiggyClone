@@ -33,7 +33,7 @@ const Body = () => {
   if (filteredResturant === null) return <ShimmerUi />;
 
   return (
-    <main className="m-10">
+    <main className="m-9">
       <div className="flex justify-between my-6">
         <button
           className="bg-slate-600 rounded-lg p-4 text-white"
