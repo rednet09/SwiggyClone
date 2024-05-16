@@ -1,4 +1,4 @@
-import ResCard from "./ResCard";
+import ResCard, { vegResturant } from "./ResCard";
 // import resList from "../Utils/mockData";
 import { useEffect, useState } from "react";
 import ShimmerUi from "./ShimmerUi";
@@ -10,6 +10,8 @@ const Body = () => {
   const [filteredResturant, setFilteredResturant] = useState([]);
   const [searchText, setSearchText] = useState();
   const status = useOnlineStatus();
+  const vegResCard = vegResturant(ResCard);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -83,7 +85,11 @@ const Body = () => {
                 key={resturant?.info?.id}
                 to={`/menu/${resturant?.info?.id}`}
               >
-                <ResCard resData={resturant} />{" "}
+                {resturant?.info?.veg ? (
+                  <vegResCard resData={resturant} />
+                ) : (
+                  <ResCard resData={resturant} />
+                )}{" "}
               </Link>
             );
           })}
@@ -92,4 +98,5 @@ const Body = () => {
     </main>
   );
 };
+
 export default Body;

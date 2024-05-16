@@ -18,4 +18,13 @@ const ResCard = ({ resData }) => {
   );
 };
 
+export const vegResturant = (ResCard) => {
+  return (props) => {
+    <>
+      <label className="absolute bg-black text-white">Veg Res</label>
+      <ResCard {...props} />
+    </>;
+  };
+};
+
 export default ResCard;
